@@ -2,31 +2,33 @@ package com.mogorovskiy.carsharingspringjpa.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.cglib.core.*;
 
-import java.time.*;
+import java.sql.*;
 
 @Entity
 @Getter
 @Setter
+@Table(name = "booking")
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
     private Long id;
 
-    @Column(nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private Long userId;
 
-    @Column(nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "car_id")
     private Long carId;
 
-    @Column(nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "payment_id")
     private Long paymentId;
 
-    @Column(nullable = false)
-    private LocalDateTime startingAt;
+    @Column(name = "starting_at")
+    private Timestamp startingAt;
 
-    @Column(nullable = false)
-    private LocalDateTime endingAt;
+    @Column(name = "ending_at")
+    private Timestamp endingAt;
 }

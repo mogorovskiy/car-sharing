@@ -29,7 +29,7 @@ public class PaymentController {
         return paymentService.getPaymentById(paymentId);
     }
 
-    @DeleteMapping("/{paymentId}")
+    @DeleteMapping("/delete/{paymentId}")
     public void delete(@PathVariable Long paymentId) {
         paymentService.deletePayment(paymentId);
     }

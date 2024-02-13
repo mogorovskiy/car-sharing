@@ -1,13 +1,14 @@
 package com.mogorovskiy.carsharingspringjpa.dto;
 
-import jakarta.persistence.*;
+import com.mogorovskiy.carsharingspringjpa.model.*;
 import lombok.*;
 
-import java.time.*;
+import java.math.*;
+import java.sql.*;
 
 @Data
 public class PaymentRequestDto {
-    private Long userId;
-    private Long cashAmount;
-    private LocalDateTime createdAt;
+    private Long user;
+    private BigDecimal cashAmount;
+    private Timestamp createdAt;
 }

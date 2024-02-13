@@ -3,30 +3,32 @@ package com.mogorovskiy.carsharingspringjpa.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.*;
+
 @Entity
 @Getter
 @Setter
+@Table(name = "car")
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
     private Long id;
 
-    @Column(nullable = false)
     private String model;
 
-    @Column(nullable = false)
     private String mark;
 
-    @Column(nullable = false)
-    private int year;
+    private Integer year;
 
-    @Column(nullable = false)
-    private int mileage;
+    private Long mileage;
 
-    @Column(nullable = false)
+    @Column(name = "licence_plate")
     private String licensePlate;
 
-    @Column(nullable = false)
-    private Long geo;
+    @ManyToOne
+    @JoinColumn(name = "geo_id")
+    private Geolocation geo;
+
+    @OneToMany(mappedBy = "carId")
+    private List<Booking> bookings;
 }

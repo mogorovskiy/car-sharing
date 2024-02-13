@@ -2,29 +2,31 @@ package com.mogorovskiy.carsharingspringjpa.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.format.annotation.*;
 
-import javax.print.attribute.standard.*;
-import java.time.*;
+import java.sql.*;
+import java.util.*;
 
 @Entity
 @Getter
 @Setter
+@Table(name = "user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
     private Long id;
 
-    @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
     private String email;
 
-    @Column(nullable = false)
     private int phone;
 
-    @Column(nullable = false)
-    private LocalDateTime createdAt;
+    @OneToMany(mappedBy = "userId")
+    private List<Booking> bookings;
+
+    @OneToMany(mappedBy = "userId")
+    private List<Payment> payments;
+
+    @Column(name = "created_at")
+    private Timestamp createdAt;
 }

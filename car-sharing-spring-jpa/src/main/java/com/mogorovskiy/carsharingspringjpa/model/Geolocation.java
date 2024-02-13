@@ -3,18 +3,21 @@ package com.mogorovskiy.carsharingspringjpa.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.*;
+
 @Entity
 @Getter
 @Setter
+@Table(name = "geo")
 public class Geolocation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
     private Long id;
 
-    @Column(nullable = false)
-    private float latitude;
+    private Float latitude;
 
-    @Column(nullable = false)
-    private float longitude;
+    private Float longitude;
+
+    @OneToMany(mappedBy = "geo")
+    private List<Car> cars;
 }

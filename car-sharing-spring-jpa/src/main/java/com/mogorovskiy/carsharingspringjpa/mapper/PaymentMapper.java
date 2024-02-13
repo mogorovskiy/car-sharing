@@ -10,7 +10,7 @@ public class PaymentMapper {
         Payment payment = new Payment();
         payment.setCashAmount(paymentRequestDto.getCashAmount());
         payment.setCreatedAt(paymentRequestDto.getCreatedAt());
-        payment.setUserId(paymentRequestDto.getUserId());
+        payment.setUserId(paymentRequestDto.getUser());
         return payment;
     }
 }

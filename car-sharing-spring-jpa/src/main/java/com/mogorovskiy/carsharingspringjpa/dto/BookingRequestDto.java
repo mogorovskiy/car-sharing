@@ -2,13 +2,13 @@ package com.mogorovskiy.carsharingspringjpa.dto;
 
 import lombok.*;
 
-import java.time.*;
+import java.sql.*;
 
 @Data
 public class BookingRequestDto {
-    private Long userId;
-    private Long carId;
-    private Long paymentId;
-    private LocalDateTime startingAt;
-    private LocalDateTime endingAt;
+    private Long user;
+    private Long car;
+    private Long payment;
+    private Timestamp startingAt;
+    private Timestamp endingAt;
 }

@@ -3,23 +3,25 @@ package com.mogorovskiy.carsharingspringjpa.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.*;
+import java.math.*;
+import java.sql.*;
 
 @Entity
 @Getter
 @Setter
+@Table(name = "payment")
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
     private Long id;
 
-    @Column(nullable = false)
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private Long userId;
 
-    @Column(nullable = false)
-    private Long cashAmount;
+    @Column(name = "cash_amount")
+    private BigDecimal cashAmount;
 
-    @Column(nullable = false)
-    private LocalDateTime createdAt;
+    @Column(name = "created_at")
+    private Timestamp createdAt;
 }
