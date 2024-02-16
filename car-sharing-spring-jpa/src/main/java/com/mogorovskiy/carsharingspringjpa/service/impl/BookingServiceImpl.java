@@ -14,11 +14,14 @@ import java.util.*;
 @RequiredArgsConstructor
 public class BookingServiceImpl implements BookingService {
     private final BookingRepository bookingRepository;
+    private final UserService userService;
     private final BookingMapper bookingMapper;
 
     @Override
     public Booking addBooking(BookingRequestDto bookingRequestDto) {
+        User user = userService.getUserById(bookingRequestDto.getUserId());
         Booking booking = bookingMapper.toModel(bookingRequestDto);
+        booking.setUser(user);
         return bookingRepository.save(booking);
     }
 

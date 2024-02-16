@@ -29,6 +29,6 @@ public class Car {
     @JoinColumn(name = "geo_id")
     private Geolocation geo;
 
-    @OneToMany(mappedBy = "carId")
+    @OneToMany(mappedBy = "car")
     private List<Booking> bookings;
 }

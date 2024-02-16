@@ -8,9 +8,6 @@ import org.springframework.stereotype.*;
 public class BookingMapper {
     public Booking toModel(BookingRequestDto bookingRequestDto) {
         Booking booking = new Booking();
-        booking.setCarId(bookingRequestDto.getCar());
-        booking.setUserId(bookingRequestDto.getUser());
-        booking.setPaymentId(bookingRequestDto.getPayment());
         booking.setStartingAt(bookingRequestDto.getStartingAt());
         booking.setEndingAt(bookingRequestDto.getEndingAt());
         return booking;

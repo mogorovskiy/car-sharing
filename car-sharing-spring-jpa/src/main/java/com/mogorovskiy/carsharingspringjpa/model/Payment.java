@@ -1,5 +1,6 @@
 package com.mogorovskiy.carsharingspringjpa.model;
 
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,7 +18,8 @@ public class Payment {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private Long userId;
+    @JsonIgnore
+    private User user;
 
     @Column(name = "cash_amount")
     private BigDecimal cashAmount;

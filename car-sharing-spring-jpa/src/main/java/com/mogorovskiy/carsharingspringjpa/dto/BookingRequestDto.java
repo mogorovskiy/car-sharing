@@ -6,9 +6,9 @@ import java.sql.*;
 
 @Data
 public class BookingRequestDto {
-    private Long user;
-    private Long car;
-    private Long payment;
+    private Long userId;
+    private Long carId;
+    private Long paymentId;
     private Timestamp startingAt;
     private Timestamp endingAt;
 }

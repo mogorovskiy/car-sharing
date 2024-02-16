@@ -1,5 +1,6 @@
 package com.mogorovskiy.carsharingspringjpa.model;
 
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -16,15 +17,18 @@ public class Booking {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private Long userId;
+    @JsonIgnore
+    private User user;
 
     @ManyToOne
     @JoinColumn(name = "car_id")
-    private Long carId;
+    @JsonIgnore
+    private Car car;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "payment_id")
-    private Long paymentId;
+    @JsonIgnore
+    private Payment payment;
 
     @Column(name = "starting_at")
     private Timestamp startingAt;

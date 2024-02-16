@@ -38,11 +38,9 @@ public class UserServiceImpl implements UserService {
         Optional<User> userOptional = userRepository.findById(userId);
         if (userOptional.isPresent()) {
             User user = userOptional.get();
-            // Обновление полей пользователя
             user.setName(userDetails.getName());
             user.setEmail(userDetails.getEmail());
             user.setPhone(userDetails.getPhone());
-            // Сохранение обновленного пользователя в базу данных
             return userRepository.save(user);
         }
         return null;

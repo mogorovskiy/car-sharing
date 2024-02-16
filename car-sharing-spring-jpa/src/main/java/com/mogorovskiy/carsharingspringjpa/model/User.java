@@ -21,10 +21,10 @@ public class User {
 
     private int phone;
 
-    @OneToMany(mappedBy = "userId")
+    @OneToMany(mappedBy = "user")
     private List<Booking> bookings;
 
-    @OneToMany(mappedBy = "userId")
+    @OneToMany(mappedBy = "user")
     private List<Payment> payments;
 
     @Column(name = "created_at")

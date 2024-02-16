@@ -14,11 +14,15 @@ import java.util.*;
 @RequiredArgsConstructor
 public class PaymentServiceImpl implements PaymentService {
     private final PaymentRepository paymentRepository;
+    private final UserService userService;
+
     private final PaymentMapper paymentMapper;
 
     @Override
     public Payment addPayment(PaymentRequestDto paymentRequestDto) {
+        User user = userService.getUserById(paymentRequestDto.getUserId());
         Payment payment = paymentMapper.toModel(paymentRequestDto);
+        payment.setUser(user);
         return paymentRepository.save(payment);
     }
 
