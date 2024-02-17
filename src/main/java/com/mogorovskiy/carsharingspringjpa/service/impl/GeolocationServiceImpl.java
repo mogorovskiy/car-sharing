@@ -38,10 +38,8 @@ public class GeolocationServiceImpl implements GeolocationService {
         Optional<Geolocation> geolocationOptional = geolocationRepository.findById(geolocationId);
         if (geolocationOptional.isPresent()) {
             Geolocation geolocation = geolocationOptional.get();
-            // Обновление полей геолокации
             geolocation.setLatitude(geolocationDetails.getLatitude());
             geolocation.setLongitude(geolocationDetails.getLongitude());
-            // Сохранение обновленной геолокации в базе данных
             return geolocationRepository.save(geolocation);
         }
         return null;
