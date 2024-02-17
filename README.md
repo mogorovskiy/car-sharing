@@ -1,12 +1,8 @@
 #   CAR SHARING SERVICE
 
-## About:
+## About
 
- This project implements a car sharing service using RESTful API endpoints, JPA (Java Persistence API), Spring framework, and MySQL (or h2) database. The service allows users to perform various operations related to car sharing, such as booking cars, managing bookings and obtaining information about the availability of such reservations.
-
-
-Car Sharing Service
-This project implements a car sharing service using RESTful API endpoints, JPA (Java Persistence API), Spring framework, and MySQL database. The service allows users to perform various operations related to car sharing, such as booking cars, managing bookings, and retrieving information about available cars.
+ This project implements a car sharing service using RESTful API endpoints, JPA (Java Persistence API), Spring framework, and MySQL (or h2) database. The service allows users to perform various operations related to car sharing, such as booking cars, managing bookings, obtaining information about the availability of such reservations, etc.
 
 ## Features
 - User Management: Users can register, login, and manage their profiles.
