@@ -84,10 +84,6 @@ U
 %.mvn/wrapper/maven-wrapper.properties,3\2\32e074f71d16c1e88ac02aa83592ca6ad1fd98a8
 Š
 Zsrc/test/java/com/mogorovskiy/carsharingspringjpa/CarSharingSpringJpaApplicationTests.java,3\7\3779b1252fdd3b6785da5ff446e0a88e48c6d29a
-k
-;src/main/java/com/mogorovskiy/carsharingspringjpa/Readmy.md,b\3\b39ecc2b10f7ebb879809885ff4463e05ea6d749
-k
-;src/main/java/com/mogorovskiy/carsharingspringjpa/README.md,1\b\1bf1145b853aeec33cec7bcd282d8bcdb13bf588
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 ‡
